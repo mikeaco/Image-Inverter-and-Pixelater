@@ -1,0 +1,11 @@
+#myCanvas{
+    width: 100vw;
+    height: 96vh;
+    position: fixed;
+    top:4vh;
+}
+.buttons{
+    position: fixed;
+    right:40vw;
+    
+}
