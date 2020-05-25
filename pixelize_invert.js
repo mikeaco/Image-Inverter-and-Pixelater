@@ -84,7 +84,6 @@ function pixelize() {
     if(PIXELMULT==0){
         PIXELMULT++;
     }
-    console.log(PIXELMULT);
     const myCanvas = document.getElementById("myCanvas");
     var myContext = myCanvas.getContext("2d");
     var dataImg = myContext.getImageData(imgX, imgY, imgWid, imgHeight);
@@ -92,6 +91,8 @@ function pixelize() {
     var wid = imgWid * 4;
     var rowCheck = 0;
     var pos = 0;
+    console.log(data[0]);
+    console.log(data);
     for (var i = 0; i < data.length; i += 4 * PIXELMULT) {
         var avgColor = [0, 0, 0, 0];
         var pixelCount = 0;
@@ -112,12 +113,7 @@ function pixelize() {
         avgColor[0] = Math.floor(avgColor[0] / pixelCount);
         avgColor[1] = Math.floor(avgColor[1] / pixelCount);
         avgColor[2] = Math.floor(avgColor[2] / pixelCount);
-        if (Math.floor(avgColor[3] / pixelCount) != 255) {
-            avgColor[3] = 0;
-        }
-        else {
-            avgColor[3] = 255;
-        }
+        avgColor[3] = Math.floor(avgColor[3] / pixelCount);
         for (var r = 0; r < 4; r++) {
             for (var row = 0; row < PIXELMULT; row++) {
                 for (var col = 0; col < PIXELMULT; col++) {
@@ -144,6 +140,7 @@ function pixelize() {
         }
 
     }
+    console.log(data);
     myContext.putImageData(dataImg, imgX, imgY);
 
 }
