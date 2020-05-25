@@ -5,7 +5,7 @@
     top:4vh;
 }
 .buttons{
-    position: fixed;
-    right:40vw;
+    position: absolute;
+    right:5vw;
     
 }

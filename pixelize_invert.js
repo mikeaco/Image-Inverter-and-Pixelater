@@ -91,8 +91,6 @@ function pixelize() {
     var wid = imgWid * 4;
     var rowCheck = 0;
     var pos = 0;
-    console.log(data[0]);
-    console.log(data);
     for (var i = 0; i < data.length; i += 4 * PIXELMULT) {
         var avgColor = [0, 0, 0, 0];
         var pixelCount = 0;
@@ -140,7 +138,6 @@ function pixelize() {
         }
 
     }
-    console.log(data);
     myContext.putImageData(dataImg, imgX, imgY);
 
 }
